@@ -1,0 +1,100 @@
+---
+const steps = [
+  {
+    icon: "chat",
+    title: "Contact",
+    description: "You reach out to us to schedule an appointment for a project estimate.",
+    color: "text-red-500"
+  },
+  {
+    icon: "home",
+    title: "Planning",
+    description: "One of our roofing experts will visit your property to help you plan your roofing project.",
+    color: "text-red-500"
+  },
+  {
+    icon: "calendar",
+    title: "Schedule",
+    description: "We work together to schedule the perfect time for your roof replacement.",
+    color: "text-red-500"
+  },
+  {
+    icon: "install",
+    title: "Install",
+    description: "Our roofers will show up promptly on schedule to tear off your old roof and install your new one.",
+    color: "text-red-500"
+  },
+  {
+    icon: "handshake",
+    title: "Commitment",
+    description: "You can rest easy knowing our work is backed by a satisfaction guarantee.",
+    color: "text-red-500"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-4">
+      Our Process
+    </h2>
+    <p class="text-center text-gray-600 mb-16">Restore Your Roof In Simple Steps</p>
+    <div class="w-32 h-1 bg-red-500 mx-auto mb-16"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      {steps.map((step) => (
+        <div class="text-center">
+          <div class="relative">
+            <div class="w-24 h-24 bg-red-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+              {step.icon === "chat" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              )}
+              {step.icon === "home" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              )}
+              {step.icon === "calendar" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              )}
+              {step.icon === "install" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              )}
+              {step.icon === "handshake" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                </svg>
+              )}
+            </div>
+          </div>
+          <div class="bg-[#1E1B4B] p-6 rounded-lg h-full">
+            <h3 class={`text-xl font-semibold mb-4 ${step.color}`}>
+              {step.title}
+            </h3>
+            <p class="text-gray-300">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a 
+        href="#contact" 
+        class="inline-flex items-center px-8 py-4 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition-colors"
+      >
+        GET A FREE INSPECTION
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

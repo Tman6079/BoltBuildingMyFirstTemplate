@@ -1,0 +1,43 @@
+---
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+
+const faqs = [
+  {
+    question: "How long does a typical roof replacement take?",
+    answer: "Most residential roof replacements can be completed in 1-3 days, depending on the size and complexity of your roof. Our experienced team works efficiently to minimize disruption to your daily routine while ensuring quality installation."
+  },
+  {
+    question: "Do you provide free estimates?",
+    answer: "Yes, we provide free, no-obligation estimates for all roofing services. Our expert will visit your property, assess your roofing needs, and provide a detailed written estimate outlining all costs and recommendations."
+  },
+  {
+    question: "What types of roofing materials do you work with?",
+    answer: "We work with a wide range of roofing materials including asphalt shingles, metal roofing, slate, tile, and flat roofing systems. We can help you choose the best material for your specific needs and budget while ensuring optimal performance and longevity."
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-16">
+      Frequently Asked Questions
+      <div class="w-32 h-1 bg-red-500 mx-auto mt-4"></div>
+    </h2>
+
+    <div class="space-y-6">
+      {faqs.map((faq, index) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <details class="group">
+            <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+              <span class="text-lg font-semibold">{faq.question}</span>
+              <ChevronDownIcon className="w-5 h-5 transform group-open:rotate-180 transition-transform duration-200" />
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

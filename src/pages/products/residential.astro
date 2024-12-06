@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { productsContent } from '../../config/productsContent';
+
+const { hero, companyInfo, jobTypes, services } = productsContent;
+---
+
+<Layout title="Residential Roofing Services">
+  <Navbar client:load />
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center">
+    <div class="absolute inset-0">
+      <img
+        src={hero.image.src}
+        alt={hero.image.alt}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl font-bold text-white mb-6">
+          {hero.title}
+        </h1>
+        <p class="text-2xl text-white mb-8">
+          {hero.subtitle}
+        </p>
+        <div class="space-y-4">
+          {hero.features.map((feature) => (
+            <div class="flex items-center text-white">
+              <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              {feature}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Info Section -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6 text-center">
+        {companyInfo.title}
+      </h2>
+      <div class="flex flex-col gap-6">
+        <div>
+          <img 
+            src={companyInfo.image.src}
+            alt={companyInfo.image.alt}
+            class="rounded-lg shadow-xl w-full h-[400px] object-cover mb-6"
+          />
+        </div>
+        <div class="prose prose-lg max-w-none">
+          <p>{companyInfo.description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Jobs Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6 text-center">Types Of Jobs We Do</h2>
+      <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+        {jobTypes.description}
+      </p>
+
+      <div class="space-y-12">
+        <div>
+          <a href="/products/installation" class="group">
+            <h3 class="text-2xl font-bold mb-4 hover:text-primary transition-colors">Roofing Installation</h3>
+          </a>
+          <p class="text-lg text-gray-600 mb-8">
+            Our expert team specializes in professional roofing installation services, ensuring your new roof is installed with precision and care. We use only the highest quality materials and follow industry-best practices to provide you with a durable, long-lasting roof that protects your home for years to come.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Roof Replacement</h3>
+          <p class="text-lg text-gray-600 mb-8">
+            When it's time to replace your aging or damaged roof, our experienced professionals will guide you through the entire process. From material selection to the final inspection, we ensure a seamless roof replacement that enhances both the protection and value of your property.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Roof Repair</h3>
+          <p class="text-lg text-gray-600 mb-8">
+            Our comprehensive roof repair services address everything from minor leaks to major storm damage. With our prompt and professional repair services, we'll identify and fix any issues quickly to prevent further damage and ensure your roof continues to protect your home effectively.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
+  <Footer />
+</Layout>

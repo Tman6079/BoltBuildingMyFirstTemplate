@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    title: "Residential Roofing",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/residential"
+  },
+  {
+    title: "Commercial Roofing",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/commercial"
+  },
+  {
+    title: "Roof Replacement",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/replacement"
+  },
+  {
+    title: "Roof Repair",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/repair"
+  },
+  {
+    title: "Metal Roofing",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/metal"
+  },
+  {
+    title: "Asphalt Shingle Roofing",
+    image: "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    href: "/services/asphalt"
+  }
+];
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-16">
+      Services We Offer
+      <div class="w-32 h-1 bg-red-500 mx-auto mt-4"></div>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <a href={service.href} class="group">
+          <div class="relative overflow-hidden rounded-lg shadow-lg">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-4 text-xl font-semibold text-white">
+              {service.title}
+              <div class="w-12 h-0.5 bg-red-500 mt-2"></div>
+            </h3>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+const features = [
+  {
+    title: "A Locally Owned and Operated Roofing Company in Nashville",
+    description: "Joes Roofing is proud to be a local roofing company that offers quality workmanship and trustworthy service to Nashville, TN. With years of experience behind us, we want to continue building a reputation of being a good roofing company you can depend on.",
+    textColor: "text-red-500"
+  },
+  {
+    title: "50-Year Workmanship Warranties",
+    description: "We believe in using great roofing products, but even great products can fail if they're not properly installed. That's why we back our work up with a 50-year workmanship warranty, so you can rest assured that your roof is in reliable hands.",
+    textColor: "text-red-500"
+  },
+  {
+    title: "Customer Satisfaction Guaranteed",
+    description: "No job is complete until you are completely satisfied with the work. That's why we don't accept any payments until your job is complete. From the initial planning to the final cleanup, we work hard to excel in every step of your roofing project.",
+    textColor: "text-red-500"
+  },
+  {
+    title: "GAF Certified",
+    description: "We are a GAF-certified installer because we believe in using premium products for every roofing project. As a certified installer, we are able to offer upgraded and extended system warranties through GAF.",
+    textColor: "text-red-500"
+  },
+  {
+    title: "Insurance Claims Assistance",
+    description: "If calling your insurance company makes you want to pull your hair out, give Joes Roofing a call. We'll help you navigate the insurance claims process as efficiently as possible so that you can focus on getting your roof back into its watertight state without a headache.",
+    textColor: "text-red-500"
+  },
+  {
+    title: "Affordable Financing Options",
+    description: "Everyone deserves a safe and reliable roof over their head. We offer low-interest financing options for customers who may not have anticipated the need for a new roof in their budget. Give us a call and we'll help you get a new roof for as low as $250 a month.",
+    textColor: "text-red-500"
+  }
+];
+---
+
+<section class="relative bg-[#1E1B4B] py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-white text-center mb-16">
+      Why Customers Choose Joes Roofing<br />
+      <span class="block">for their Roofing Needs</span>
+      <div class="w-32 h-1 bg-red-500 mx-auto mt-4"></div>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      {features.map((feature) => (
+        <div class="flex gap-4">
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class={`text-xl font-semibold mb-2 ${feature.textColor}`}>
+              {feature.title}
+            </h3>
+            <p class="text-gray-300">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Wave shape divider -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg class="fill-red-500" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C240,95 480,95 720,95 C960,95 1200,95 1440,0 L1440,100 L0,100 Z"></path>
+    </svg>
+  </div>
+</section>
