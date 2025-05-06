@@ -1,35 +1,71 @@
 ---
+import { z } from "zod";
+
+const props = Astro.props;
+
+z.object({
+  title: z.string().min(10).max(30),
+  description: z.string().min(200).max(300),
+}).parse(props);
+
+const { title, description } = props;
 ---
+
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-3xl sm:text-4xl font-bold text-dark mb-6">
-          Your Trusted Partner in Roofing Excellence
+          {title}
         </h2>
         <div class="prose prose-lg text-gray-600">
           <p class="mb-4">
-            With over two decades of experience in the roofing industry, we've built our reputation on quality craftsmanship, exceptional customer service, and unwavering integrity. Our team of certified professionals is dedicated to providing top-tier roofing solutions that protect your most valuable asset - your property.
+            {description}
           </p>
           <p class="mb-6">
-            Whether you need residential roofing, commercial solutions, or emergency repairs, we bring the same level of dedication and expertise to every project. Our commitment to using premium materials and staying current with industry best practices ensures that your roof will stand the test of time.
+            Whether you need residential roofing, commercial solutions, or
+            emergency repairs, we bring the same level of dedication and
+            expertise to every project. Our commitment to using premium
+            materials and staying current with industry best practices ensures
+            that your roof will stand the test of time.
           </p>
           <ul class="space-y-2">
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              <svg
+                class="w-5 h-5 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
               </svg>
               Licensed & Insured Professionals
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              <svg
+                class="w-5 h-5 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
               </svg>
               Premium Quality Materials
             </li>
             <li class="flex items-center">
-              <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              <svg
+                class="w-5 h-5 text-primary mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clip-rule="evenodd"></path>
               </svg>
               Lifetime Warranty Available
             </li>

@@ -1,0 +1,25 @@
+---
+import StandardPage from "../layouts/StandardPage.astro";
+
+export async function getStaticPaths() {
+  const pageConfig = await fetch("http://localhost:3000/get-config").then(
+    (response) => response.json()
+  );
+
+  console.log(pageConfig);
+
+  return pageConfig.map(({ slug, config }) => {
+    return {
+      params: { slug },
+      props: {
+        config,
+      },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { config } = Astro.props;
+---
+
+<StandardPage config={config} />

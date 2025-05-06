@@ -1,5 +1,5 @@
 ---
-
+const { title, description } = Astro.props;
 ---
 
 <section class="relative bg-dark pt-24 pb-32 overflow-hidden">
@@ -7,18 +7,17 @@
     <img
       src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       alt="Roofing"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover brightness-50"
     />
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8">
-        Professional Roofing Services<br />
+        {title}<br />
         <span class="text-primary">You Can Trust</span>
       </h1>
       <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-        Expert roofing solutions for residential and commercial properties.
-        Quality workmanship guaranteed. Hi tyson :)
+        {description}
       </p>
       <div class="flex justify-center">
         <a
